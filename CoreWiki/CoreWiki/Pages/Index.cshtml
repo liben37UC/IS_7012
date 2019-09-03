@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+
+    }
+
+       td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+
+    }
+
+       tr:nth-child(even) {
+          background-color: #dddddd;
+
+    }
+
+
+</style> <div> <table>     <tr>         <h1>My Wikipedia Pages</h1>     </tr>     <tr>         <td><a href="/RMS_Baltic">RMS Baltic</a></td>     </tr>     <tr>         <td><a href="/Manipulator">Manipulator (album)</a></td>     </tr>     <tr>         <td><a href="/Elektra_Records">Elektra Records</a></td>     </tr> </table> </div>
