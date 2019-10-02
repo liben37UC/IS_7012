@@ -1,0 +1,93 @@
+﻿@page
+@model CoreCrud.Pages.Collectibles.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Core Crud", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a href="/Contact">Contact</a></li>
+                <li><a href="/Manufacturers">Manufacturers</a></li>
+                <li><a href="/Collectibles">Collectibles</a></li>
+                <li><a href="/ManufacturerProfile">Manufacturer Profile</a></li>
+                <li><a href="/Auction">Auction</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2>List of Collectibles</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Pierre_Despereax_09.19.2012_%288004871773%29.jpg" alt="toy" height="200" width="200">
+
+
+<p>
+    <a asp-page="Create">Add a new collectible</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].Electronic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Collectible[0].Manufacturer.ManufacturerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Collectible)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Electronic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Material)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer.ManufacturerName)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Core Crud", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                    <li><a href="/Manufacturers">Manufacturers</a></li>
+                    <li><a href="/Collectibles">Collectibles</a></li>
+                    <li><a href="/ManufacturerProfile">Manufacturer Profile</a></li>
+                    <li><a href="/Auction">Auction</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<p>Use this area to provide additional information.</p>
