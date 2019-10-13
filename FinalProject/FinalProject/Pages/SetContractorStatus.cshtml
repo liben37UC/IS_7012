@@ -1,0 +1,54 @@
+﻿@page
+@model FinalProject.Pages.SetContractorStatusModel
+@{
+    ViewData["Title"] = "SetContractorStatus";
+}
+
+
+
+<h2>Change Contractor Status</h2>
+
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" style="margin-top: 50px;">
+
+            <div class="form-group">
+                <label class="control-label">Contractor Name</label>
+                <div>
+                    <p class="form-control-static">@Model.Contractor.FirstName @Model.Contractor.LastName</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Current Status</label>
+                <div>
+                    <p class="form-control-static">@Model.Contractor.WorkStatus</p>
+                </div>
+            </div>
+
+            @if(Model.Contractor.WorkStatus == "working") {
+
+            <input type="hidden" asp-for="SetContractorStatus.ContractorId" />
+            <div class="form-group">
+                <label asp-for="SetContractorStatus.status" class="control-label"></label>
+                <select asp-for="SetContractorStatus.status" class="form-control">
+                    <option value="fired">fired</option>
+                    <option value="retired">no allocation</option>
+                </select>
+                <span asp-validation-for="SetContractorStatus.status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Set Status" class="btn btn-danger" />
+            </div>
+            } else {
+            <div class="form-group">
+            </div>
+            <div class="alert alert-warning">
+                <p>This contractor is no longer on a project.</p>
+            </div>
+            }
+        </form>
+    </div>
+</div>

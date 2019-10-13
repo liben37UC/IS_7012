@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/About">About</a></li>
+                <li><a asp-page="/Contact">Contact</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+                <li><a asp-page="/Help">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<img src="~/images/business-3152586__340.jpg" alt="business" height="300" width="300" />
+
+<h4>
+    Having a difficult time managing all of your organizations different contractors and on-going projects?
+    No worries, P and E Workforce Management is here to help!
+    P and E Workforce Management is an interactive, web based platform designed to help your organization
+    keep track of your employment and project needs.
+</h4>
+
+<hr />
+
+<h2>Quick Stats</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Number of Businesses</th>
+            <th>Number of Contractors</th>
+            <th>Number of Projects</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.number_businesses</td>
+            <td>@Model.number_contractors</td>
+            <td>@Model.number_projects</td>
+        </tr>
+    </tbody>
+</table>

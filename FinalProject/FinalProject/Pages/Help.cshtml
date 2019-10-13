@@ -1,0 +1,77 @@
+﻿@page
+@model FinalProject.Pages.HelpModel
+@{
+    ViewData["Title"] = "Help";
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/About">About</a></li>
+                <li><a asp-page="/Contact">Contact</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+                <li><a asp-page="/Help">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<h1>Help</h1>
+
+<hr />
+
+<p>
+    Here we will show you the features of this website and how to use it.
+</p>
+
+<hr />
+
+<h2>Admin</h2>
+<p>
+    In order to use admin features click on the admin tab in the navigation bar
+</p>
+
+<h3>Admin - Sections</h3>
+<p> Admin will have multiple sections. These include: Contractors, Businesses, and Projects.</p>
+
+<hr />
+<h3>
+    Projects
+</h3>
+
+<p>
+    To View list of projects click on the projects tab in the navigation bar. To search for a project use the search bar and click search.
+    To clear the search click clear search. To create a new project click create new.
+</p>
+
+<p>
+    To end a project click on End Project select the end date for the project. This will automatically update all contractors on that project to no allocation.
+</p>
+
+<hr />
+<h3>
+    Businesses
+</h3>
+<p> to interact with the business tab click on businesses in navigation bar. You can add businesses and click on their profile to view them in detail</p>
+<hr />
+<h3>
+    Contractors
+</h3>
+<p>
+    To interact with contrators you can click on the contractor to view their profile or you can create a contractor profile.
+    To change a contractors work status and fire them click on the change status button.
+</p>
+
+
+

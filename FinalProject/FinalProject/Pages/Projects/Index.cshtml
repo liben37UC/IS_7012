@@ -1,0 +1,111 @@
+﻿@page
+@model FinalProject.Pages.Projects.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+                <li><a asp-page="/Businesses/Index">Businesses</a></li>
+                <li><a asp-page="/Contractors/Index">Contractors</a></li>
+                <li><a asp-page="/ContractorAnalysis">Contractor Analysis</a></li>
+                <li><a asp-page="/Projects/Index">Projects</a></li>
+                <li><a asp-page="/ProjectOverview">Project Overview</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h2>List of Projects</h2>
+
+<form action="" method="POST" style="margin-top: 50px; width: 300px">
+    <div class="form-group">
+        <label class="control-label" for="search">Project Name</label>
+        <input type="text" class="form-control" name="search" id="search" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search Projects" class="btn btn-default" />
+    </div>
+</form>
+
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="form-group">
+        <input type="submit" value="Clear Search" class="btn btn-default" />
+    </div>
+</form>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].PlannedEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].ActualEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].RunningTotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].DepartmentName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Project) {
+        <tr>
+            <td>
+                <a asp-page="/ProjectProfile" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ProjectName)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlannedEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualEndDate)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Budget)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.RunningTotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                <a asp-page="/EndProject" asp-route-id="@item.ID">End Project</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

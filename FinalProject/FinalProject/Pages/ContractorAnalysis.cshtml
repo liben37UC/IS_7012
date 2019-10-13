@@ -1,0 +1,100 @@
+﻿@page
+@model FinalProject.Pages.ContractorAnalysisModel
+@{
+    ViewData["Title"] = "ContractorAnalysis";
+}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+                <li><a asp-page="/Businesses/Index">Businesses</a></li>
+                <li><a asp-page="/Contractors/Index">Contractors</a></li>
+                <li><a asp-page="/ContractorAnalysis">Contractor Analysis</a></li>
+                <li><a asp-page="/Projects/Index">Projects</a></li>
+                <li><a asp-page="/ProjectOverview">Project Overview</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h2>Top Performing Contractors - Sorted by Performance Rating</h2>
+
+<table class="table table-bordered table-striped"">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].PlannedEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].ActualEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].WorkStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].Business)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contractors[0].Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Contractors)
+    {
+    <tr>
+        <td>
+            <a asp-page="/ContractorProfile" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.FirstName)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlannedEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Business.BusinessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.ProjectName)
+        </td>
+    </tr>
+    }
+    </tbody>
+    </table>
+

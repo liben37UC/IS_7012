@@ -1,0 +1,94 @@
+﻿@page
+@model FinalProject.Pages.Businesses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Index">Home</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+                <li><a asp-page="/Businesses/Index">Businesses</a></li>
+                <li><a asp-page="/Contractors/Index">Contractors</a></li>
+                <li><a asp-page="/ContractorAnalysis">Contractor Analysis</a></li>
+                <li><a asp-page="/Projects/Index">Projects</a></li>
+                <li><a asp-page="/ProjectOverview">Project Overview</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h2>List of Businesses</h2>
+
+<form action="" method="POST" style="margin-top: 50px; width: 300px">
+    <div class="form-group">
+        <label class="control-label" for="search">Business Name</label>
+        <input type="text" class="form-control" name="search" id="search" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search Businesses" class="btn btn-default" />
+    </div>
+</form>
+
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="form-group">
+        <input type="submit" value="Clear Search" class="btn btn-default" />
+    </div>
+</form>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Business[0].BusinessName)
+            <th>
+                @Html.DisplayNameFor(model => model.Business[0].BusinessType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Business[0].BusinessCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Business[0].NumberEmployees)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Business) {
+        <tr>
+            <td>
+                <a asp-page="/BusinessProfile" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.BusinessName)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberEmployees)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

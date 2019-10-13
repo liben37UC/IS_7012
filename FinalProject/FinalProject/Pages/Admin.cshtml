@@ -1,0 +1,38 @@
+﻿@page
+@model FinalProject.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-page="/Index" class="navbar-brand">P & E</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Admin">Admin</a></li>
+                    <li><a asp-page="/Businesses/Index">Businesses</a></li>
+                    <li><a asp-page="/Contractors/Index">Contractors</a></li>
+                    <li><a asp-page="/ContractorAnalysis">Contractor Analysis</a></li>
+                    <li><a asp-page="/Projects/Index">Projects</a></li>
+                    <li><a asp-page="/ProjectOverview">Project Overview</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<h1>Admin</h1>
+<img src="~/images/05-1User-512.png" alt="admin" height="200" width="200">
+
+<br />
+
+<h2>
+    Welcome to the admin section. Here you be able to create new projects and add contractors with their business.
+</h2>
+

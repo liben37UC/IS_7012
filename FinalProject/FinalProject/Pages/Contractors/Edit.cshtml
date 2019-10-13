@@ -1,0 +1,75 @@
+﻿@page
+@model FinalProject.Pages.Contractors.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Contractor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Contractor.ID" />
+            <div class="form-group">
+                <label asp-for="Contractor.FirstName" class="control-label"></label>
+                <input asp-for="Contractor.FirstName" class="form-control" />
+                <span asp-validation-for="Contractor.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.LastName" class="control-label"></label>
+                <input asp-for="Contractor.LastName" class="form-control" />
+                <span asp-validation-for="Contractor.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.StartDate" class="control-label"></label>
+                <input asp-for="Contractor.StartDate" class="form-control" />
+                <span asp-validation-for="Contractor.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.PlannedEndDate" class="control-label"></label>
+                <input asp-for="Contractor.PlannedEndDate" class="form-control" />
+                <span asp-validation-for="Contractor.PlannedEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.ActualEndDate" class="control-label"></label>
+                <input asp-for="Contractor.ActualEndDate" class="form-control" />
+                <span asp-validation-for="Contractor.ActualEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.WorkStatus" class="control-label"></label>
+                <input asp-for="Contractor.WorkStatus" class="form-control" />
+                <span asp-validation-for="Contractor.WorkStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.Rating" class="control-label"></label>
+                <input asp-for="Contractor.Rating" class="form-control" />
+                <span asp-validation-for="Contractor.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.BusinessID" class="control-label"></label>
+                <select asp-for="Contractor.BusinessID" class="form-control" asp-items="ViewBag.BusinessID"></select>
+                <span asp-validation-for="Contractor.BusinessID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contractor.ProjectID" class="control-label"></label>
+                <select asp-for="Contractor.ProjectID" class="form-control" asp-items="ViewBag.ProjectID"></select>
+                <span asp-validation-for="Contractor.ProjectID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

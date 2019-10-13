@@ -1,0 +1,54 @@
+﻿@page
+@model AboutModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-page="/Index" class="navbar-brand">P & E</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-page="/Home">Home</a></li>
+                <li><a asp-page="/About">About</a></li>
+                <li><a asp-page="/Contact">Contact</a></li>
+                <li><a asp-page="/Admin">Admin</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div>
+    <h2>
+        P and E WorkForce Management began with two friends and a single laptop. Ely Davis and Patrick Liben were frustrated with the
+        way that their current employer managed the organization's contractors and projects. So, they set out to find a muhc more
+        efficient and user friendly way to track them. Thus, P and E WorkForce Management was born!
+
+    </h2>
+</div>
+<hr />
+<h2>Ely Davis</h2>
+<img src="~/images/davis_ely.jpg" alt="ely" height="200" width="150">
+<p>
+    <strong> Ely Davis </strong> comes from a business and technology background. He completed his Bachelor of Business Administration at the University of
+    Cincinnati and went on to pursue a Master of Science in Information Systems. Davis has extensive sales experience in the telecommunications indistry.
+</p>
+<hr />
+<h2>Patrick Liben</h2>
+<img src="~/images/patrick..jpg" alt="patrick" height="200" width="150">
+<p>
+    <strong> Patrick Liben</strong> comes from a heavy technical background. Liben completed his Bachelor of Science in Computer
+    Engineering and went on to pursue a Master of Science in Information Systems. Liben has extensive experience with databases
+    and software engineering.
+
+</p>
+
+
+
