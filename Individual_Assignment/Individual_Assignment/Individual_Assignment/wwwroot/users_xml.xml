@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="user.xsl"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="uservalidation.xsd">
+  <user>
+    <firstname>Kyle</firstname>
+    <lastname>Johnson</lastname>
+    <bearcatid>johns2k9</bearcatid>
+    <favoriteshortcut>Shift+Tab</favoriteshortcut>
+    <favoriteclass>XML</favoriteclass>
+  </user>
+</users>

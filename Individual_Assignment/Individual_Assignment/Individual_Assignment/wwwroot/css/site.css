@@ -1,0 +1,68 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 160px;
+}
+
+h2 {
+    text-align: left;
+}
+
+.sidebarText {
+    font-family: "Times New Roman";
+    font-size: 30px;
+}
+
+.sidehover:hover {
+    font-family: "Times New Roman";
+    font-size: 30px;
+    color: white;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 200px;
+    padding-right: 15px;
+    background-color: powderblue;
+    color: black;
+    font-family: verdana;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed; /* used this styling from w3 schools */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
